@@ -8,6 +8,12 @@
 
 # 配置
 
+**Most Important** 
+
+      QT += testlib
+
+Add this line to the pro file
+
 ## Include
 
 1. 采用相对路径，无需修改
@@ -16,14 +22,13 @@
   1. Qt 4.8.1
   2. msvc2010
   3. 32bit
+4. 没有包含tiff库
 
 # 问题
 
 ## HighGUI
 
-+ 静态编译时需要包含静态qt才能编译带有qt支持的highgui
-+ 暂时静态Qt没有成功编译
-+ 使用没有Qt支持的highgui，所以不能使用
++ HighGUI功能使用Qt库，需要在pro文件中加入testlib
 
 ### 受影响的函数
 

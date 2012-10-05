@@ -48,6 +48,8 @@ void MainWindow::on_pushButton_open_clicked()
     tempImage.release();
     ui->label->resize(ui->label->pixmap()->size());
     if (opencvDispWindow) {
+        cv::namedWindow("Original Image");
+        cv::imshow("Original Image", image);
     }
     drawFov(image);
 }
@@ -70,6 +72,8 @@ void MainWindow::on_pushButton_flip_clicked()
     tempImage.release();
     ui->label->resize(ui->label->pixmap()->size());
     if (opencvDispWindow) {
+        cv::namedWindow("Processed Image");
+        cv::imshow("Processed Image", image);
     }
     drawFov(image);
 }
