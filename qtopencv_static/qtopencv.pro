@@ -48,8 +48,7 @@ win32 {
                 -lopencv_ts242 \
                 -lopencv_video242 \
                 -lopencv_videostab242 \
-                -lzlib \
-                -ltbb
+                -lzlib
             PRE_TARGETDEPS += \
                 $${OPENCVDIR}/lib/libjasper.lib \
                 $${OPENCVDIR}/lib/libjpeg.lib \
@@ -71,8 +70,7 @@ win32 {
                 $${OPENCVDIR}/lib/opencv_ts242.lib \
                 $${OPENCVDIR}/lib/opencv_video242.lib \
                 $${OPENCVDIR}/lib/opencv_videostab242.lib \
-                $${OPENCVDIR}/lib/zlib.lib \
-                $${OPENCVDIR}/lib/tbb.lib
+                $${OPENCVDIR}/lib/zlib.lib
         } else {
             LIBS += -L$${OPENCVDIR}/lib \
                 -llibjasperd \
@@ -95,8 +93,7 @@ win32 {
                 -lopencv_ts242d \
                 -lopencv_video242d \
                 -lopencv_videostab242d \
-                -lzlibd \
-                -ltbb_debug
+                -lzlibd
             PRE_TARGETDEPS += \
                 $${OPENCVDIR}/lib/libjasperd.lib \
                 $${OPENCVDIR}/lib/libjpegd.lib \
@@ -118,8 +115,7 @@ win32 {
                 $${OPENCVDIR}/lib/opencv_ts242d.lib \
                 $${OPENCVDIR}/lib/opencv_video242d.lib \
                 $${OPENCVDIR}/lib/opencv_videostab242d.lib \
-                $${OPENCVDIR}/lib/zlibd.lib \
-                $${OPENCVDIR}/lib/tbb_debug.lib
+                $${OPENCVDIR}/lib/zlibd.lib
         }
         message("OpenCV libraries found in $${OPENCVDIR}")
     } else {

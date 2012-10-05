@@ -15,3 +15,8 @@
 *~
 *.swp
 
+# Qt Compiled Project
+/*-build-*
+
+# Qt Project User Config
+/qtopencv_static/*.user
