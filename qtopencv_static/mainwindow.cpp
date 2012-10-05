@@ -81,6 +81,9 @@ void MainWindow::on_pushButton_flip_clicked()
 void MainWindow::on_checkBox_disp_stateChanged(int arg1)
 {
     opencvDispWindow = arg1 == 2;
+    if (opencvDispWindow);
+    else
+        cv::destroyAllWindows();
     // 0 unchecked, 1 partially checked, 2 checked.
 }
 
@@ -135,3 +138,8 @@ void MainWindow::drawFov(const cv::Mat& im)
     return;
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    cv::destroyAllWindows();
+    event->accept();
+}

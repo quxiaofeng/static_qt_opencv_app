@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <QFileDialog>
+#include <QCloseEvent>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -35,6 +36,7 @@ private slots:
 
     void on_spinBox_outR_valueChanged(int arg1);
 
+
 private:
     Ui::MainWindow *ui;
     cv::Mat image;
@@ -43,6 +45,7 @@ private:
     double innerRadius;
     double outerRadius;
     void drawFov(const cv::Mat& im);
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // MAINWINDOW_H
