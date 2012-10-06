@@ -36,7 +36,7 @@ void MainWindow::on_pushButton_open_clicked()
     image = cv::imread(fileName.toAscii().data());
     if (image.data) ;
     else return;
-    ui->textBrowser_log->append(tr("image file: ")+fileName+tr(" loaded successfully\n"));
+    ui->textBrowser_log->append(tr("image file: ")+fileName+tr(" loaded successfully"));
     ui->pushButton_flip->setEnabled(true);
     cv::Mat tempImage = image.clone();
     cv::cvtColor(tempImage,tempImage,CV_BGR2RGB);
@@ -48,7 +48,7 @@ void MainWindow::on_pushButton_open_clicked()
     tempImage.release();
     ui->label->resize(ui->label->pixmap()->size());
     if (opencvDispWindow) {
-        cv::namedWindow("Original Image");
+        cv::namedWindow("Original Image", CV_GUI_NORMAL);
         cv::imshow("Original Image", image);
     }
     drawFov(image);
@@ -72,7 +72,7 @@ void MainWindow::on_pushButton_flip_clicked()
     tempImage.release();
     ui->label->resize(ui->label->pixmap()->size());
     if (opencvDispWindow) {
-        cv::namedWindow("Processed Image");
+        cv::namedWindow("Processed Image", CV_GUI_NORMAL);
         cv::imshow("Processed Image", image);
     }
     drawFov(image);
@@ -140,6 +140,7 @@ void MainWindow::drawFov(const cv::Mat& im)
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    cv::destroyAllWindows();
+    if (opencvDispWindow)
+        cv::destroyAllWindows();
     event->accept();
 }

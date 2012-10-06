@@ -31,6 +31,7 @@ win32 {
                 -llibjasper \
                 -llibjpeg \
                 -llibpng \
+                -llibtiff \
                 -lopencv_calib3d242 \
                 -lopencv_contrib242 \
                 -lopencv_core242 \
@@ -53,6 +54,7 @@ win32 {
                 $${OPENCVDIR}/lib/libjasper.lib \
                 $${OPENCVDIR}/lib/libjpeg.lib \
                 $${OPENCVDIR}/lib/libpng.lib \
+                $${OPENCVDIR}/lib/libtiff.lib \
                 $${OPENCVDIR}/lib/opencv_calib3d242.lib \
                 $${OPENCVDIR}/lib/opencv_contrib242.lib \
                 $${OPENCVDIR}/lib/opencv_core242.lib \
@@ -76,6 +78,7 @@ win32 {
                 -llibjasperd \
                 -llibjpegd \
                 -llibpngd \
+                -llibtiffd \
                 -lopencv_calib3d242d \
                 -lopencv_contrib242d \
                 -lopencv_core242d \
@@ -98,6 +101,7 @@ win32 {
                 $${OPENCVDIR}/lib/libjasperd.lib \
                 $${OPENCVDIR}/lib/libjpegd.lib \
                 $${OPENCVDIR}/lib/libpngd.lib \
+                $${OPENCVDIR}/lib/libtiffd.lib \
                 $${OPENCVDIR}/lib/opencv_calib3d242d.lib \
                 $${OPENCVDIR}/lib/opencv_contrib242d.lib \
                 $${OPENCVDIR}/lib/opencv_core242d.lib \
