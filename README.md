@@ -14,6 +14,39 @@
 
 Add this line to the pro file
 
+## 新问题
+
+QT += testlib会造成多余的控制台
+
+### 原因
+
+[这个帖子提到](http://comments.gmane.org/gmane.comp.lib.qt.general/30894)testlib会强制加入 CONFIG += console
+
+testlib只在highgui中使用了一次
+
+但该处使用涉及到按键事件循环，把Qt的按键事件转换为ASCII码，不知道有没有其他方法替代。
+暂时直接去掉，看起来似乎不影响highgui的功能，另外在我的例子中cv::namedWindow没有按钮。
+
+*opencv/modules/highgui/src/windows_QT.cpp*
+
+      void CvWindow::keyPressEvent(QKeyEvent *evnt)
+      {
+          ...
+          // Qt::Key qtkey = static_cast<Qt::Key>(key);
+          // char asciiCode = QTest::keyToAscii(qtkey);
+          // if (asciiCode != 0)
+          //     key = static_cast<int>(asciiCode);
+          // else
+              key = evnt->nativeVirtualKey(); //same codes as returned by GTK-based backend
+          ...
+      }
+
+
+
+*opencv/modules/highgui/src/windows_QT.h*
+
+      // #include <QtTest/QTest>
+
 ## Include
 
 1. 采用相对路径，无需修改
