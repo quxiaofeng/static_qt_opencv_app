@@ -16,11 +16,11 @@ Add this line to the pro file
 
 ## 新问题
 
-QT += testlib会造成多余的控制台
+QT += testlib会造成多余的控制台窗口
 
 ### 原因
 
-[这个帖子提到](http://comments.gmane.org/gmane.comp.lib.qt.general/30894)testlib会强制加入 CONFIG += console
+正如[这个帖子](http://comments.gmane.org/gmane.comp.lib.qt.general/30894)提到testlib会强制加入 CONFIG += console
 
 testlib只在highgui中使用了一次
 
