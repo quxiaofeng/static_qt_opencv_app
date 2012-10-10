@@ -20,3 +20,6 @@
 
 # Qt Project User Config
 /qtopencv_static/*.user
+
+# 7zip zipped files
+*.7z
