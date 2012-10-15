@@ -60,7 +60,7 @@
 
 ## 执行如下清理用Ruby脚本
 
-> *tidy.rb*
+*tidy.rb*
 
       require 'fileutils'
 
