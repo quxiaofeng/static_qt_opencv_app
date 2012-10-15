@@ -6,8 +6,8 @@
 2. msrt是动态编译，考虑到qt会有msrt
 3. 使用msvc2010 32bit保证在PC平台上最广泛的兼容性
 
-> *[Github Project Page](https://github.com/quxiaofeng/static_qt_opencv_app)*
-> *[Author's Notes](http://www4.comp.polyu.edu.hk/~csxfqu/2012/09/24/opencv-qt.html)*
+> *[Github Project Page](https://github.com/quxiaofeng/static_qt_opencv_app)*    
+> *[Author's Notes](http://www4.comp.polyu.edu.hk/~csxfqu/2012/09/24/opencv-qt.html)*    
 
 # 配置
 
