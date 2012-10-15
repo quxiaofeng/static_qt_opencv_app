@@ -6,6 +6,9 @@
 2. msrt是动态编译，考虑到qt会有msrt
 3. 使用msvc2010 32bit保证在PC平台上最广泛的兼容性
 
+> *[Github Project Page](https://github.com/quxiaofeng/static_qt_opencv_app)*
+> *[Author's Notes](http://www4.comp.polyu.edu.hk/~csxfqu/2012/09/24/opencv-qt.html)*
+
 # 配置
 
 把Qt 4.8.1 mscv2010 运行时加入系统PATH
@@ -70,7 +73,7 @@
 
       system("7z a static_opencv_lib.7z lib include")
 
-### tidy.rb依赖的库: Ruby, DevKit, fileutils
+> tidy.rb依赖的库: Ruby, DevKit, fileutils
 
 
 ## 在Qt项目中添加以下配置以便使用
@@ -218,8 +221,6 @@ testlib只在highgui中使用了一次
               key = evnt->nativeVirtualKey(); //same codes as returned by GTK-based backend
           ...
       }
-
-
 
 *opencv/modules/highgui/src/windows_QT.h*
 
