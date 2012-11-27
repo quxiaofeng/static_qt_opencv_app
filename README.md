@@ -1,56 +1,56 @@
-# 目的
+# 目锟斤拷
 
-尝试调用静态编译的opencv
+锟斤拷锟皆碉拷锟矫撅拷态锟斤拷锟斤拷锟斤拷opencv
 
-1. opencv是静态编译，包含调试和发布两版静态库
-2. msrt是动态编译，考虑到qt会有msrt
-3. 使用msvc2010 32bit保证在PC平台上最广泛的兼容性
+1. opencv锟角撅拷态锟斤拷锟诫，锟斤拷锟斤拷锟斤拷锟皆和凤拷锟斤拷锟斤拷锟芥静态锟斤拷
+2. msrt锟角讹拷态锟斤拷锟诫，锟斤拷锟角碉拷qt锟斤拷锟斤拷msrt
+3. 使锟斤拷msvc2010 32bit锟斤拷证锟斤拷PC平台锟斤拷锟斤拷锟姐泛锟侥硷拷锟斤拷锟斤拷
 
 > *[Github Project Page](https://github.com/quxiaofeng/static_qt_opencv_app)*    
-> *[Author's Notes](http://www4.comp.polyu.edu.hk/~csxfqu/2012/09/24/opencv-qt.html)*    
+> *[Author's Notes](http://www4.comp.polyu.edu.hk/~csxfqu/2012/10/26/opencv.html)*    
 
-# 配置
+# 锟斤拷锟斤拷
 
-把Qt 4.8.1 mscv2010 运行时加入系统PATH
+锟斤拷Qt 4.8.1 mscv2010 锟斤拷锟斤拷时锟斤拷锟斤拷系统PATH
 
 ## Include
 
-1. 采用相对路径，无需修改
-2. 包含除Qt外所有相关库
-3. Qt使用的版本
+1. 锟斤拷锟斤拷锟斤拷锟斤拷路锟斤拷锟斤拷锟斤拷锟斤拷锟睫革拷
+2. 锟斤拷锟斤拷锟斤拷Qt锟斤拷锟斤拷锟斤拷锟斤拷锟截匡拷
+3. Qt使锟矫的版本
   1. Qt 4.8.1
   2. msvc2010
   3. 32bit
 
-# 方法
+# 锟斤拷锟斤拷
 
-## 下载相关软件
+## 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
-1. [CMake 2.8](http://cmake.org/cmake/resources/software.html)，默认安装
-2. [QT SDK 1.2.1](http://www.developer.nokia.com/Develop/Qt/Tools/)，默认安装后升级并选定qt 4.8.1 desktop msvc2010
-3. [OpenCV 2.4.2](http://sourceforge.net/projects/opencvlibrary/files/latest/download)，解压缩
+1. [CMake 2.8](http://cmake.org/cmake/resources/software.html)锟斤拷默锟较帮拷装
+2. [QT SDK 1.2.1](http://www.developer.nokia.com/Develop/Qt/Tools/)锟斤拷默锟较帮拷装锟斤拷锟斤拷锟斤拷锟斤拷选锟斤拷qt 4.8.1 desktop msvc2010
+3. [OpenCV 2.4.2](http://sourceforge.net/projects/opencvlibrary/files/latest/download)锟斤拷锟斤拷压锟斤拷
 4. Visual Studio 2010 (C++)
 
-## 编译过程
+## 锟斤拷锟斤拷锟斤拷锟斤拷
 
-1. 使用CMake配置OpenCV    
-单击configure，共三次，第一次指定目录并选择编译器，第二次选择OpenCV配置，第三次指定qmake    
-   + 编译器选择Visual Studio 10 native
-   + 勾选 debug_info 使能调试版本
-   + 勾选 with_qt 添加 Qt 支持
-   + 配置QT_QMAKE_EXECUTABLE为 QtSDK/Desktop/Qt/4.8.1/msvc2010/bin/qmake.exe
-   + 勾选with_videoinput 添加 DirectShow 支持
-   + 取消 shared_libs 编译静态库
-   + 取消 build_with_static_crt, 因为Qt动态链接这个库. 也许静态编译Qt后再修改
-   + 取消 with_ffmpeg 因为ffmpeg只有动态库
-   + 为节省时间，取消这些: docs/examples/package/perf_tests/tests
-5. 单击generate
-6. 使用 Visual Studio 2010 打开/output/path/OpenCV.sln
-   + 分别选择 Debug/Release Win32 配置
-   + 每次先生成 "ALL_BUILD" 约几分钟
-   + 然后再生成 "CMakeTargets/INSTALL" 约几秒钟
+1. 使锟斤拷CMake锟斤拷锟斤拷OpenCV    
+锟斤拷锟斤拷configure锟斤拷锟斤拷锟斤拷锟轿ｏ拷锟斤拷一锟斤拷指锟斤拷目录锟斤拷选锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟节讹拷锟斤拷选锟斤拷OpenCV锟斤拷锟矫ｏ拷锟斤拷锟斤拷锟斤拷指锟斤拷qmake    
+   + 锟斤拷锟斤拷锟斤拷选锟斤拷Visual Studio 10 native
+   + 锟斤拷选 debug_info 使锟杰碉拷锟皆版本
+   + 锟斤拷选 with_qt 锟斤拷锟斤拷 Qt 支锟斤拷
+   + 锟斤拷锟斤拷QT_QMAKE_EXECUTABLE为 QtSDK/Desktop/Qt/4.8.1/msvc2010/bin/qmake.exe
+   + 锟斤拷选with_videoinput 锟斤拷锟斤拷 DirectShow 支锟斤拷
+   + 取锟斤拷 shared_libs 锟斤拷锟诫静态锟斤拷
+   + 取锟斤拷 build_with_static_crt, 锟斤拷为Qt锟斤拷态锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷. 也锟斤拷锟斤拷态锟斤拷锟斤拷Qt锟斤拷锟斤拷锟睫革拷
+   + 取锟斤拷 with_ffmpeg 锟斤拷为ffmpeg只锟叫讹拷态锟斤拷
+   + 为锟斤拷省时锟戒，取锟斤拷锟斤拷些: docs/examples/package/perf_tests/tests
+5. 锟斤拷锟斤拷generate
+6. 使锟斤拷 Visual Studio 2010 锟斤拷锟斤拷/output/path/OpenCV.sln
+   + 锟街憋拷选锟斤拷 Debug/Release Win32 锟斤拷锟斤拷
+   + 每锟斤拷锟斤拷锟斤拷锟斤拷 "ALL_BUILD" 约锟斤拷锟斤拷锟斤拷
+   + 然锟斤拷锟斤拷锟斤拷锟斤拷 "CMakeTargets/INSTALL" 约锟斤拷锟斤拷锟斤拷
 
-## 输出结构中有用的文件
+## 锟斤拷锟斤拷锟结构锟斤拷锟斤拷锟矫碉拷锟侥硷拷
 
       output/path/install
                      bin/*.dll
@@ -58,7 +58,7 @@
                      lib/*
                      share/*
 
-## 执行如下清理用Ruby脚本
+## 执锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷Ruby锟脚憋拷
 
 *tidy.rb*
 
@@ -73,12 +73,12 @@
 
       system("7z a static_opencv_lib.7z lib include")
 
-> tidy.rb依赖的库: Ruby, DevKit, fileutils
+> tidy.rb锟斤拷锟斤拷锟侥匡拷: Ruby, DevKit, fileutils
 
 
-## 在Qt项目中添加以下配置以便使用
+## 锟斤拷Qt锟斤拷目锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟皆憋拷使锟斤拷
 
-*假设静态库文件放在 "../opencv_static_lib" 目录*
+*锟斤拷锟借静态锟斤拷锟侥硷拷锟斤拷锟斤拷 "../opencv_static_lib" 目录*
 
       win32 {
           OPENCVDIR = "../opencv_static_lib"
@@ -189,24 +189,24 @@
           }
       }
 
-# 问题
+# 锟斤拷锟斤拷
 
 ## HighGUI
 
-+ HighGUI功能使用Qt支持，相关工程即使自身没有使用也需要在pro文件中加入testlib
-+ 而QT += testlib会造成多余的控制台窗口
++ HighGUI锟斤拷锟斤拷使锟斤拷Qt支锟街ｏ拷锟斤拷锟截癸拷锟教硷拷使锟斤拷锟斤拷没锟斤拷使锟斤拷也锟斤拷要锟斤拷pro锟侥硷拷锟叫硷拷锟斤拷testlib
++ 锟斤拷QT += testlib锟斤拷锟斤拷锟缴讹拷锟斤拷锟侥匡拷锟斤拷台锟斤拷锟斤拷
 
-### 原因
+### 原锟斤拷
 
-正如[这个帖子](http://comments.gmane.org/gmane.comp.lib.qt.general/30894)提到testlib会强制加入 CONFIG += console
+锟斤拷锟斤拷[锟斤拷锟斤拷锟斤拷锟斤拷](http://comments.gmane.org/gmane.comp.lib.qt.general/30894)锟结到testlib锟斤拷强锟狡硷拷锟斤拷 CONFIG += console
 
-testlib只在highgui中使用了一次
+testlib只锟斤拷highgui锟斤拷使锟斤拷锟斤拷一锟斤拷
 
-但该处使用涉及到按键事件循环，把Qt的按键事件转换为ASCII码，不知道有没有其他方法替代。
+锟斤拷锟矫达拷使锟斤拷锟芥及锟斤拷锟斤拷锟斤拷锟铰硷拷循锟斤拷锟斤拷锟斤拷Qt锟侥帮拷锟斤拷锟铰硷拷转锟斤拷为ASCII锟诫，锟斤拷知锟斤拷锟斤拷没锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
-### 解决方法
+### 锟斤拷锟斤拷锟斤拷锟斤拷
 
-暂时直接去掉，看起来似乎不影响highgui的功能，另外在我的例子中cv::namedWindow没有按钮。
+锟斤拷时直锟斤拷去锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟狡猴拷锟斤拷影锟斤拷highgui锟侥癸拷锟杰ｏ拷锟斤拷锟斤拷锟斤拷锟揭碉拷锟斤拷锟斤拷锟斤拷cv::namedWindow没锟叫帮拷钮锟斤拷
 
 *opencv/modules/highgui/src/windows_QT.cpp*
 
@@ -228,7 +228,7 @@ testlib只在highgui中使用了一次
 
 ## TIFF lib
 
-其中的MessageBoxA和GetFocus函数调用出问题，注释掉相关代码(两行)后，可以解决。
+锟斤拷锟叫碉拷MessageBoxA锟斤拷GetFocus锟斤拷锟斤拷锟斤拷锟矫筹拷锟斤拷锟解，注锟酵碉拷锟斤拷锟截达拷锟斤拷(锟斤拷锟斤拷)锟襟，匡拷锟皆斤拷锟斤拷锟斤拷
 
 *opencv/3rdparty/libtiff/tif_win32.c*
 
@@ -251,36 +251,36 @@ testlib只在highgui中使用了一次
 
 
 
-## OpenCV HighGUI 窗口按钮无图片(Build with Qt)
+## OpenCV HighGUI 锟斤拷锟节帮拷钮锟斤拷图片(Build with Qt)
 
-+ 参见[Bug #2070](http://code.opencv.org/issues/2070)
-+ Harald Schmidt给出[Patch #2178](http://code.opencv.org/issues/2178)。不仅解决图标显示问题，同时改进HighGUI的图标显示方式。文件分成两部分。
-  1. [Patch 2304](http://code.opencv.org/issues/2304)是需要修改的HighGUI代码。下载四个代码文件后，把头文件和源代码文件分别放到opencv/modules/highgui/include/opencv2/highgui和opencv/modules/highgui/src目录下。
-  2. [Patch 2303](http://code.opencv.org/issues/2303)是修改后，新增加功能的示例。
++ 锟轿硷拷[Bug #2070](http://code.opencv.org/issues/2070)
++ Harald Schmidt锟斤拷锟斤拷[Patch #2178](http://code.opencv.org/issues/2178)锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷示锟斤拷锟解，同时锟侥斤拷HighGUI锟斤拷图锟斤拷锟斤拷示锟斤拷式锟斤拷锟侥硷拷锟街筹拷锟斤拷锟斤拷锟街★拷
+  1. [Patch 2304](http://code.opencv.org/issues/2304)锟斤拷锟斤拷要锟睫改碉拷HighGUI锟斤拷锟诫。锟斤拷锟斤拷锟侥革拷锟斤拷锟斤拷锟侥硷拷锟襟，帮拷头锟侥硷拷锟斤拷源锟斤拷锟斤拷锟侥硷拷锟街憋拷锟脚碉拷opencv/modules/highgui/include/opencv2/highgui锟斤拷opencv/modules/highgui/src目录锟铰★拷
+  2. [Patch 2303](http://code.opencv.org/issues/2303)锟斤拷锟睫改猴拷锟斤拷锟斤拷锟斤拷锟接癸拷锟杰碉拷示锟斤拷锟斤拷
 
-**不好用**，且留待继续测试或者新版修正
+**锟斤拷锟斤拷锟斤拷**锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟皆伙拷锟斤拷锟铰帮拷锟斤拷锟斤拷
 
-### 暂时的解决方式
+### 锟斤拷时锟侥斤拷锟斤拷锟斤拷式
 
-在没有必要显示像素坐标与颜色的场合，使用没有按钮的窗口。
+锟斤拷没锟叫憋拷要锟斤拷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷色锟侥筹拷锟较ｏ拷使锟斤拷没锟叫帮拷钮锟侥达拷锟节★拷
 
       cv::namedWindow("Original Image", CV_GUI_NORMAL);
 
 
-# 测试
+# 锟斤拷锟斤拷
 
-## 测试图像放在
+## 锟斤拷锟斤拷图锟斤拷锟斤拷锟斤拷
 
       testimages
 
-## 测试程序
+## 锟斤拷锟皆筹拷锟斤拷
 
-1. 用opencv读入图像
-2. 用opencv翻转图像
-3. 用qt显示图像
-4. 用opencv绘图并用qt显示
-5. 用qt控制图像中绘图参数
+1. 锟斤拷opencv锟斤拷锟斤拷图锟斤拷
+2. 锟斤拷opencv锟斤拷转图锟斤拷
+3. 锟斤拷qt锟斤拷示图锟斤拷
+4. 锟斤拷opencv锟斤拷图锟斤拷锟斤拷qt锟斤拷示
+5. 锟斤拷qt锟斤拷锟斤拷图锟斤拷锟叫伙拷图锟斤拷锟斤拷
 
 # TODO
 
-静态编译Qt，以实现无dll的单exe
+锟斤拷态锟斤拷锟斤拷Qt锟斤拷锟斤拷实锟斤拷锟斤拷dll锟侥碉拷exe
